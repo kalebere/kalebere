@@ -1,0 +1,43 @@
+// Shape Interface
+interface Shape {
+    double area();
+}
+
+// Rectangle Class
+class Rectangle implements Shape {
+    double length, breadth;
+
+    Rectangle(double l, double b) {
+        length = l;
+        breadth = b;
+    }
+
+    public double area() {
+        return length * breadth;
+    }
+}
+
+// Triangle Class
+class Triangle implements Shape {
+    double base, height;
+
+    Triangle(double b, double h) {
+        base = b;
+        height = h;
+    }
+
+    public double area() {
+        return 0.5 * base * height;
+    }
+}
+
+// Test Class
+public class ShapeTest {
+    public static void main(String[] args) {
+        Rectangle r = new Rectangle(10, 5);
+        Triangle t = new Triangle(6, 4);
+
+        System.out.println("Rectangle Area: " + r.area());
+        System.out.println("Triangle Area: " + t.area());
+    }
+}
